@@ -1,0 +1,42 @@
+<div class="container mt-4">
+  <h1 class="text-center">Lista de Tarefas</h1>
+  <div class="d-flex justify-content-end mb-3">
+    <a class="btn btn-primary" routerLink="/orcamentos/tarefas/nova">Nova Tarefa</a>
+  </div>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Descrição</th>
+        <th>Responsável</th>
+        <th>Status</th>
+        <th>Data Criação</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Usando ngIf para verificar se há tarefas -->
+      <ng-container *ngIf="tarefas && tarefas.length > 0">
+        <tr *ngFor="let tarefa of tarefas">
+          <td>{{ tarefa.idTarefa }}</td>
+          <td>{{ tarefa.descricao }}</td>
+          <td>{{ tarefa.responsavel }}</td>
+          <td>{{ tarefa.status }}</td>
+          <td>{{ tarefa.prazo }}</td>
+          <td>
+            <a class="btn btn-warning btn-sm" [routerLink]="['/orcamentos/tarefas/editar', tarefa.idTarefa]">Editar</a>
+            <a class="btn btn-danger btn-sm" (click)="confirmDelete(tarefa.idTarefa)">Excluir</a>
+          </td>
+        </tr>
+      </ng-container>
+
+      <!-- Mensagem quando não há tarefas -->
+      <tr *ngIf="!tarefas || tarefas.length === 0">
+        <td colspan="6">Nenhuma tarefa encontrada.</td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <a class="btn btn-secondary" routerLink="/dashboard">Voltar ao Dashboard</a>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="container mt-4">
+  <h1>Detalhes do Orçamento</h1>
+
+  <!-- Informações do Cliente -->
+  <div>
+    <h2>Cliente</h2>
+    <p><strong>Nome:</strong> {{ orcamento.demanda.cliente.nome }}</p>
+    <p><strong>Empresa:</strong> {{ orcamento.demanda.cliente.empresa }}</p>
+    <p><strong>Email:</strong> {{ orcamento.demanda.cliente.email }}</p>
+    <p><strong>Telefone:</strong> {{ orcamento.demanda.cliente.telefone }}</p>
+  </div>
+
+  <!-- Informações da Demanda -->
+  <div>
+    <h2>Demanda</h2>
+    <p><strong>Descrição:</strong> {{ orcamento.demanda.descricao }}</p>
+    <p><strong>Prioridade:</strong> {{ orcamento.demanda.prioridade }}</p>
+    <p><strong>Status:</strong> {{ orcamento.demanda.status }}</p>
+  </div>
+
+  <!-- Lista de Tarefas -->
+  <div>
+    <h2>Tarefas</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Prazo</th>
+          <th>Responsável</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tarefa of tarefas">
+          <td>{{ tarefa.descricao }}</td>
+          <td>{{ tarefa.prazo }}</td>
+          <td>{{ tarefa.responsavel }}</td>
+          <td>{{ tarefa.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <p><strong>Prazo Estimado:</strong> {{ prazoEstimado }} dias</p>
+    </div>
+    <div class="col-md-6">
+      <p><strong>Valor Total:</strong> R$ {{ valorTotal }}</p>
+    </div>
+  </div>
+
+  <!-- Resumo do Orçamento -->
+  <div>
+    <h2>Resumo</h2>
+    <p><strong>Prazo Final:</strong> {{ prazoFinal }}</p>
+    <p><strong>Prazo Estimado:</strong> {{ prazoEstimado }} dias</p>
+    <p><strong>Valor Total:</strong> R$ {{ valorTotal }}</p>
+  </div>
+</div>

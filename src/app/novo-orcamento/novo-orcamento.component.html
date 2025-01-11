@@ -1,0 +1,59 @@
+<div class="container py-5">
+  <h1 class="mb-4 text-center">Gerar Orçamento</h1>
+
+  <form (ngSubmit)="gerarOrcamento()" class="row g-3">
+    <!-- Selecionar Demanda -->
+    <div class="col-md-6">
+      <label for="demanda" class="form-label">Demanda</label>
+      <select id="demanda" [(ngModel)]="orcamento.idDemanda" name="idDemanda" class="form-select" required (change)="carregarDetalhesDemanda()">
+        <option value="" disabled selected>Selecione uma demanda</option>
+        <option *ngFor="let demanda of demandas" [value]="demanda.id">
+          {{ 'ID: ' + demanda.id + ' - ' + demanda.descricao }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Cliente Associado -->
+    <div class="col-md-6">
+      <label for="cliente" class="form-label">Cliente</label>
+      <input type="text" id="cliente" class="form-control" [(ngModel)]="orcamento.cliente" name="cliente" readonly placeholder="Selecione uma demanda">
+    </div>
+
+    <!-- Tarefas Associadas -->
+    <div class="col-md-12">
+      <label for="tarefas" class="form-label">Tarefas Associadas</label>
+      <ul id="tarefas" class="list-group">
+        <li *ngFor="let tarefa of tarefas" class="list-group-item">
+          {{ 'ID: ' + tarefa.idTarefa + ' - ' + tarefa.descricao }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- Valor -->
+    <div class="col-md-6">
+      <label for="valor" class="form-label">Valor (R$)</label>
+      <input type="number" id="valor" [(ngModel)]="orcamento.valor" name="valor" class="form-control" step="0.01" required>
+    </div>
+
+    <!-- Prazo Estimado -->
+    <div class="col-md-6">
+      <label for="prazoEstimado" class="form-label">Prazo Estimado (dias)</label>
+      <input type="number" id="prazoEstimado" [(ngModel)]="orcamento.prazoEstimado" name="prazoEstimado" class="form-control" min="1" required>
+    </div>
+
+    <!-- Botão Gerar Orçamento -->
+    <div class="col-12 d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary">Gerar Orçamento</button>
+    </div>
+  </form>
+
+  <!-- Exibir Orçamento Gerado -->
+  <div *ngIf="orcamentoGerado" class="mt-4">
+    <h3>Orçamento Gerado</h3>
+    <p><strong>Demanda:</strong> {{ orcamento.demanda }}</p>
+    <p><strong>Cliente:</strong> {{ orcamento.cliente }}</p>
+    <p><strong>Tarefas:</strong> {{ tarefas | json }}</p>
+    <p><strong>Valor:</strong> R$ {{ orcamento.valor }}</p>
+    <p><strong>Prazo Estimado:</strong> {{ orcamento.prazoEstimado }} dias</p>
+  </div>
+</div>
