@@ -1,36 +1,38 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms'; // Importação para formulários reativos
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { TarefasComponent } from './tarefas/tarefas.component';
-import { ListaOrcamentosComponent } from './lista-orcamentos/lista-orcamentos.component';
-import { NovoOrcamentoComponent } from './novo-orcamento/novo-orcamento.component';
-import { DetalheOrcamentoComponent } from './detalhe-orcamento/detalhe-orcamento.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { HttpClientModule } from '@angular/common/http';  // Mantenha apenas o HttpClientModule
-import { OrcamentoService } from './services/orcamento.service';
-import { FormsModule } from '@angular/forms'; // Necessário para usar ngModel
+import { ClientListComponent } from './client-list/client-list.component';
+import { ClientFormComponent } from './client-form/client-form.component';
+import { ClientEditComponent } from './client-edit/client-edit.component';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
-    TarefasComponent,
-    ListaOrcamentosComponent,
-    NovoOrcamentoComponent,
-    DetalheOrcamentoComponent,
-    NavbarComponent
+    NavbarComponent,
+    ClientListComponent,
+    ClientFormComponent,
+    ClientEditComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule,  // Certifique-se de manter o HttpClientModule
-    FormsModule,       // Necessário para usar ngModel
-    ReactiveFormsModule // Importado caso precise de formulários reativos
+    HttpClientModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [OrcamentoService],
-  bootstrap: [AppComponent]
+  providers: [
+    provideNgxMask(),
+    provideHttpClient(withFetch()), // Provide HttpClient with Fetch
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

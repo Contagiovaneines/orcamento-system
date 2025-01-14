@@ -1,19 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { TarefasComponent } from './tarefas/tarefas.component';
-import { ListaOrcamentosComponent } from './lista-orcamentos/lista-orcamentos.component';
-import { NovoOrcamentoComponent } from './novo-orcamento/novo-orcamento.component';
-import { DetalheOrcamentoComponent } from './detalhe-orcamento/detalhe-orcamento.component';
+import { ClientListComponent } from './client-list/client-list.component';
+import { ClientFormComponent } from './client-form/client-form.component';
+import { ClientEditComponent } from './client-edit/client-edit.component';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent }, // Dashboard como padrão
-  { path: 'orcamentos/tarefas', component: TarefasComponent },
-  { path: 'orcamentos', component: ListaOrcamentosComponent },
-  { path: 'orcamentos/novo', component: NovoOrcamentoComponent },
-  { path: 'orcamentos/:id_orcamento', component: DetalheOrcamentoComponent },
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'clientes', component: ClientListComponent },
+  { path: 'clientes/novo', component: ClientFormComponent },  // Rota para criação
+  { path: 'clientes/editar/:id', component: ClientEditComponent },  // Rota para edição
+  { path: '', redirectTo: '/clientes/novo', pathMatch: 'full' }, // Redireciona para o formulário de criação
 ];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

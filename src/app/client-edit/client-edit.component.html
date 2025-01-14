@@ -1,0 +1,45 @@
+<div class="container mt-4">
+  <h1 class="text-center">Editar Cliente</h1>
+
+  <!-- Exibindo mensagem de erro, se houver -->
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <form [formGroup]="clientForm" (ngSubmit)="saveClient()">
+    <!-- Nome do Cliente -->
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" class="form-control" formControlName="nome" />
+      <!-- Mensagem de erro -->
+      <div *ngIf="clientForm.get('nome')?.invalid && clientForm.get('nome')?.touched" class="text-danger">
+        O nome é obrigatório.
+      </div>
+    </div>
+
+    <!-- Email do Cliente -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" class="form-control" formControlName="email" />
+      <!-- Mensagem de erro -->
+      <div *ngIf="clientForm.get('email')?.invalid && clientForm.get('email')?.touched" class="text-danger">
+        O email é obrigatório e deve ser válido.
+      </div>
+    </div>
+
+    <!-- Telefone do Cliente -->
+    <div class="form-group">
+      <label for="telefone">Telefone</label>
+      <input type="text" id="telefone" class="form-control" formControlName="telefone" />
+    </div>
+
+    <!-- Empresa do Cliente -->
+    <div class="form-group">
+      <label for="empresa">Empresa</label>
+      <input type="text" id="empresa" class="form-control" formControlName="empresa" />
+    </div>
+
+    <!-- Botão de Salvar -->
+    <button type="submit" class="btn btn-success" [disabled]="clientForm.invalid">Salvar</button>
+  </form>
+</div>

@@ -1,0 +1,15 @@
+/* client-list.component.css */
+.snack-info {
+  background-color: #007bff; /* Azul para o aviso de edição */
+  color: white;
+}
+
+.snack-success {
+  background-color: #28a745; /* Verde para o sucesso */
+  color: white;
+}
+
+.snack-error {
+  background-color: #dc3545; /* Vermelho para o erro */
+  color: white;
+}
