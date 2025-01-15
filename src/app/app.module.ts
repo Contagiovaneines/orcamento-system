@@ -11,6 +11,8 @@ import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
+import { PaginaInicialComponent } from './pagina-inicial/pagina-inicial.component';
+import { CadastroSucessoComponent } from './cadastro-sucesso/cadastro-sucesso.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
     NavbarComponent,
     ClientListComponent,
     ClientFormComponent, // Corrigido o nome para 'ClienteFormComponent'
-    ClientEditComponent,
+    ClientEditComponent, PaginaInicialComponent, CadastroSucessoComponent,
   ],
   imports: [
     BrowserModule,

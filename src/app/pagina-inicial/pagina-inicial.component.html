@@ -1,0 +1,118 @@
+<!-- App Component HTML -->
+<div class="container-fluid">
+  <header class="fixed-top bg-white" [ngClass]="{'scrolled': isScrolled}">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="assets\k_azul.png" alt="Kaspper Logo" height="40">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Sobre Nós</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Serviços</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Produtos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Cases</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Vagas</a></li>
+            <li class="nav-item">
+              <a routerLink="/clientes/novo" class="btn btn-primary">Orçamento</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section text-center text-white">
+    <div class="overlay"></div>
+    <div class="container">
+      <img src="assets\kaspper_br.png" alt="Kaspper Logo" class="hero-logo mb-4">
+      <h2 class="mb-4">Uma empresa do Grupo</h2>
+      <img src="assets\accesstage.png" alt="Accesstage Logo" class="group-logo">
+    </div>
+  </section>
+
+ <!-- Features Section -->
+<section class="features-section py-5">
+  <div class="container">
+    <h3 class="text-center mb-5">Inovadora em TI com processamento de alta performance.</h3>
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <div class="feature-icon mb-3">
+          <img src="assets\img-kaspper-3.jpg" alt="Analisamos seu Panorama" class="img-fluid">
+        </div>
+        <h4>Conhecemos o seu negócio</h4>
+        <p>Uma das principais áreas em que atuamos com nossos clientes.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="feature-icon mb-3">
+          <img src="assets\img-kaspper-1.jpg" alt="Criamos uma Estratégia" class="img-fluid">
+        </div>
+        <h4>Construindo contexto – não apenas código</h4>
+        <p>Não somos uma fábrica de programas, construímos sistemas.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="feature-icon mb-3">
+          <img src="assets\img-kaspper-7.jpg" alt="Entregamos Valor Agregado" class="img-fluid">
+        </div>
+        <h4>Somos responsivos e flexíveis</h4>
+        <p>“Nada muda até que algo se mova”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Steps Section -->
+  <section class="steps-section bg-dark text-white py-5">
+    <div class="container">
+      <h2 class="mb-5">Isto é o que fazemos e fazemos perfeitamente</h2>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="step-card">
+            <span class="step-number">01</span>
+            <h5>Conhecemos o seu negócio</h5>
+            <p>Uma das principais áreas em que atuamos com nossos clientes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section py-5">
+    <div class="container">
+      <h2>Fale com a Kaspper!</h2>
+      <p>Aguardamos seu contato, aguardamos seu resultado.</p>
+      <button class="btn btn-primary">Entre em Contato</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Serviços</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">Alocação de Profissionais</a></li>
+            <li><a href="#">Automação de Processos</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Produtos</h5>
+          <ul class="list-unstyled"></ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Kaspper</h5>
+          <ul class="list-unstyled"></ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

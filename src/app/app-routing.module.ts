@@ -2,17 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClientListComponent } from './client-list/client-list.component';
 import { ClientFormComponent } from './client-form/client-form.component';
-import { ClientEditComponent } from './client-edit/client-edit.component';
+import { PaginaInicialComponent } from './pagina-inicial/pagina-inicial.component';  // Importa a Página Inicial
+import { CadastroSucessoComponent } from './cadastro-sucesso/cadastro-sucesso.component';  // Importando o componente de sucesso
 
-const routes: Routes = [
-  { path: 'clientes', component: ClientListComponent },
-  { path: 'clientes/novo', component: ClientFormComponent },  // Rota para criação
-  { path: 'clientes/editar/:id', component: ClientEditComponent },  // Rota para edição
-  { path: '', redirectTo: '/clientes/novo', pathMatch: 'full' }, // Redireciona para o formulário de criação
+export const routes: Routes = [
+  { path: '', component: PaginaInicialComponent, data: { title: 'Kaspper - Home' } },
+  { path: 'clientes/novo', component: ClientFormComponent, data: { title: 'Kaspper - Novo Orcamento' } },
+  { path: 'cadastro-sucesso', component: CadastroSucessoComponent, data: { title: 'Kaspper - Cadastro Realizado com Sucesso' } },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
-
-
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],

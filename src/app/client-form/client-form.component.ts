@@ -47,13 +47,22 @@ export class ClientFormComponent implements OnInit {
         }
       );
     } else {
+      // Cadastro de um novo cliente
       this.clientService.saveClient(this.client).subscribe(
         () => {
-          this.snackBar.open('Cadastro realizado! Entraremos em contato em 3 dias.', 'Fechar', {
+          const snack = this.snackBar.open('Cadastro realizado! Entraremos em contato em 3 dias.', 'Fechar', {
             duration: 5000,
             panelClass: ['snack-success']
           });
-          this.router.navigate(['/clientes']);
+
+          // Ouvir quando o snack bar for fechado
+          snack.afterDismissed().subscribe(() => {
+            // Redireciona para a página inicial após fechar o snack bar
+            this.router.navigate(['/']);
+          });
+
+          // Após o cadastro, redireciona para a página de sucesso
+          this.router.navigate(['/cadastro-sucesso']);
         },
         (error) => {
           if (error.error && error.error.message) {
