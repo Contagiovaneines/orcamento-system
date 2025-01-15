@@ -17,7 +17,7 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
     AppComponent,
     NavbarComponent,
     ClientListComponent,
-    ClientFormComponent,
+    ClientFormComponent, // Corrigido o nome para 'ClienteFormComponent'
     ClientEditComponent,
   ],
   imports: [

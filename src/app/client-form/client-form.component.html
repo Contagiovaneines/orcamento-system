@@ -1,6 +1,7 @@
 <div class="container mt-4">
   <h1 class="text-center">{{ client.id ? 'Editar Cliente' : 'Novo Cliente' }}</h1>
-  <form (ngSubmit)="saveClient()" #clientForm="ngForm">
+  <form (ngSubmit)="save()" #clientForm="ngForm">
+    <!-- Campos do formulário -->
 
     <!-- Campo Nome -->
     <div class="mb-3">
@@ -68,6 +69,18 @@
         name="empresa"
         #empresa="ngModel"
       />
+    </div>
+
+    <!-- Novo campo 'Solicitação' -->
+    <div class="mb-3">
+      <label for="solicitacao" class="form-label">Solicitação</label>
+      <textarea
+        class="form-control"
+        id="solicitacao"
+        [(ngModel)]="client.solicitacao"
+        name="solicitacao"
+        rows="3">
+      </textarea>
     </div>
 
     <!-- Ações -->

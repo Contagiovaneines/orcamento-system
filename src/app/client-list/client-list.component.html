@@ -4,6 +4,7 @@
     <a routerLink="/clientes/novo" class="btn btn-primary">Novo Cliente</a>
   </div>
 
+  <!-- Tabela de clientes -->
   <table class="table table-bordered table-hover">
     <thead class="table-dark">
       <tr>
@@ -12,57 +13,80 @@
         <th>Email</th>
         <th>Telefone</th>
         <th>Empresa</th>
+        <th>Solicitação</th>
         <th>Ações</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let client of clients">
         <td>{{ client.id }}</td>
-        <td *ngIf="client !== clientToEdit">{{ client.nome }}</td>
-        <td *ngIf="client === clientToEdit">
-          <input class="form-control" [(ngModel)]="clientToEdit.nome" />
-        </td>
-
-        <td *ngIf="client !== clientToEdit">{{ client.email }}</td>
-        <td *ngIf="client === clientToEdit">
-          <input class="form-control" [(ngModel)]="clientToEdit.email" />
-        </td>
-
-        <td *ngIf="client !== clientToEdit">{{ client.telefone }}</td>
-        <td *ngIf="client === clientToEdit">
-          <input class="form-control" [(ngModel)]="clientToEdit.telefone" />
-        </td>
-
-        <td *ngIf="client !== clientToEdit">{{ client.empresa }}</td>
-        <td *ngIf="client === clientToEdit">
-          <input class="form-control" [(ngModel)]="clientToEdit.empresa" />
-        </td>
-
+        <td>{{ client.nome }}</td>
+        <td>{{ client.email }}</td>
+        <td>{{ client.telefone || 'Não informado' }}</td>
+        <td>{{ client.empresa || 'Não informado' }}</td>
+        <td>{{ client.solicitacao || 'Não informada' }}</td>
         <td>
-          <button *ngIf="client !== clientToEdit" class="btn btn-warning" [routerLink]="['/clientes/editar', client.id]">Editar</button>
-          <button *ngIf="client === clientToEdit" class="btn btn-success" (click)="saveClient()">Salvar</button>
-          <!-- Botão de Exclusão com Modal -->
-          <button class="btn btn-danger" (click)="confirmDelete(client)">Excluir</button>
+          <button
+            class="btn btn-warning"
+            [routerLink]="['/clientes/editar', client.id]"
+          >
+            Editar
+          </button>
+          <button
+            class="btn btn-danger"
+            data-bs-toggle="modal"
+            data-bs-target="#deleteModal"
+            (click)="confirmDelete(client)"
+          >
+            Excluir
+          </button>
         </td>
       </tr>
     </tbody>
   </table>
+
+  <!-- Mensagem caso a lista esteja vazia -->
+  <div *ngIf="clients.length === 0" class="text-center text-muted mt-4">
+    Nenhum cliente cadastrado.
+  </div>
 </div>
 
-<!-- Modal de Confirmação de Exclusão -->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+<!-- Modal de confirmação de exclusão -->
+<div
+  class="modal fade"
+  id="deleteModal"
+  tabindex="-1"
+  aria-labelledby="deleteModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="deleteModalLabel">Confirmar Exclusão</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> <!-- Botão de Fechar -->
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
-        Você tem certeza que deseja excluir este cliente? Esta ação não pode ser desfeita.
+        Você tem certeza que deseja excluir o cliente
+        <strong>{{ clientToDelete?.nome }}</strong>?
+        Esta ação não pode ser desfeita.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="cancelDelete()" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-danger" (click)="deleteClient()">Confirmar Exclusão</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="deleteClient()"
+          data-bs-dismiss="modal"
+        >
+          Confirmar Exclusão
+        </button>
       </div>
     </div>
   </div>
