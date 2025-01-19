@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="container mt-5 pt-5">
   <div class="form-container mx-auto p-4 bg-white rounded shadow-lg">
     <h1 class="form-title text-center text-primary mb-4">
@@ -10,17 +9,6 @@
         <label for="nome" class="form-label">Nome <span class="text-danger">*</span></label>
         <div class="input-group">
           <span class="input-group-text bg-primary text-white">
-=======
-<div class="container mt-5">
-  <div class="form-container mx-auto p-4 bg-white rounded shadow">
-    <h1 class="form-title text-center">{{ client.id ? 'Editar Cliente' : 'Novo Orçamento' }}</h1>
-    <form (ngSubmit)="save()" #clientForm="ngForm">
-      <!-- Campo Nome -->
-      <div class="mb-3">
-        <label for="nome" class="form-label">Nome <span class="text-danger">*</span></label>
-        <div class="input-group">
-          <span class="input-group-text">
->>>>>>> d7863fd68ca11c157916d2a87cc68fbf44bfaf3b
             <i class="material-icons">person</i>
           </span>
           <input
@@ -33,27 +21,16 @@
             #nome="ngModel"
           />
         </div>
-<<<<<<< HEAD
         <div *ngIf="nome.invalid && nome.touched" class="text-danger small">
-=======
-        <div *ngIf="nome.invalid && nome.touched" class="text-danger">
->>>>>>> d7863fd68ca11c157916d2a87cc68fbf44bfaf3b
           O nome é obrigatório.
         </div>
       </div>
 
       <!-- Campo Email -->
-<<<<<<< HEAD
       <div class="mb-4">
         <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
         <div class="input-group">
           <span class="input-group-text bg-primary text-white">
-=======
-      <div class="mb-3">
-        <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
-        <div class="input-group">
-          <span class="input-group-text">
->>>>>>> d7863fd68ca11c157916d2a87cc68fbf44bfaf3b
             <i class="material-icons">email</i>
           </span>
           <input
@@ -67,28 +44,16 @@
             #email="ngModel"
           />
         </div>
-<<<<<<< HEAD
         <div *ngIf="email.invalid && email.touched" class="text-danger small">
-=======
-        <div *ngIf="email.invalid && email.touched" class="text-danger">
->>>>>>> d7863fd68ca11c157916d2a87cc68fbf44bfaf3b
           O email é obrigatório e deve ser válido.
         </div>
       </div>
 
-<<<<<<< HEAD
       <!-- Campo Telefone -->
       <div class="mb-4">
         <label for="telefone" class="form-label">Telefone <span class="text-danger">*</span></label>
         <div class="input-group">
           <span class="input-group-text bg-primary text-white">
-=======
-      <!-- Campo Telefone com Máscara -->
-      <div class="mb-3">
-        <label for="telefone" class="form-label">Telefone <span class="text-danger">*</span></label>
-        <div class="input-group">
-          <span class="input-group-text">
->>>>>>> d7863fd68ca11c157916d2a87cc68fbf44bfaf3b
             <i class="material-icons">phone</i>
           </span>
           <input
@@ -104,27 +69,16 @@
             placeholder="(XX) 0 0000 0000"
           />
         </div>
-<<<<<<< HEAD
         <div *ngIf="telefone.invalid && telefone.touched" class="text-danger small">
-=======
-        <div *ngIf="telefone.invalid && telefone.touched" class="text-danger">
->>>>>>> d7863fd68ca11c157916d2a87cc68fbf44bfaf3b
           O telefone é obrigatório.
         </div>
       </div>
 
       <!-- Campo Empresa -->
-<<<<<<< HEAD
       <div class="mb-4">
         <label for="empresa" class="form-label">Empresa</label>
         <div class="input-group">
           <span class="input-group-text bg-primary text-white">
-=======
-      <div class="mb-3">
-        <label for="empresa" class="form-label">Empresa</label>
-        <div class="input-group">
-          <span class="input-group-text">
->>>>>>> d7863fd68ca11c157916d2a87cc68fbf44bfaf3b
             <i class="material-icons">business</i>
           </span>
           <input
@@ -139,42 +93,26 @@
       </div>
 
       <!-- Campo Solicitação -->
-<<<<<<< HEAD
       <div class="mb-4">
-=======
-      <div class="mb-3">
->>>>>>> d7863fd68ca11c157916d2a87cc68fbf44bfaf3b
         <label for="solicitacao" class="form-label">Solicitação</label>
         <textarea
           class="form-control"
           id="solicitacao"
           [(ngModel)]="client.solicitacao"
           name="solicitacao"
-<<<<<<< HEAD
           rows="4"
-=======
-          rows="3"
->>>>>>> d7863fd68ca11c157916d2a87cc68fbf44bfaf3b
           placeholder="Descreva a solicitação do cliente">
         </textarea>
       </div>
 
       <!-- Ações -->
-<<<<<<< HEAD
       <div class="d-flex justify-content-between align-items-center">
-=======
-      <div class="d-flex justify-content-between">
->>>>>>> d7863fd68ca11c157916d2a87cc68fbf44bfaf3b
         <a routerLink="/" class="btn btn-secondary">
           <i class="material-icons">arrow_back</i> Voltar
         </a>
         <button
           type="submit"
-<<<<<<< HEAD
           class="btn btn-primary px-4"
-=======
-          class="btn btn-success"
->>>>>>> d7863fd68ca11c157916d2a87cc68fbf44bfaf3b
           [disabled]="!clientForm.form.valid">
           <i class="material-icons">save</i> Salvar
         </button>
@@ -183,24 +121,3 @@
   </div>
 </div>
 
-<<<<<<< HEAD
-=======
-<!-- Estilo Adicional -->
-<style>
-  body {
-    background-color: #f8f9fa;
-  }
-
-  .form-container {
-    max-width: 700px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-  }
-
-  .form-title {
-    margin-bottom: 20px;
-  }
-</style>
->>>>>>> d7863fd68ca11c157916d2a87cc68fbf44bfaf3b
