@@ -1,4 +1,21 @@
-canvas {
-  max-width: 100%;
-  height: auto;
+header.scrolled {
+  background-color: rgba(190, 183, 183, 0.8);
+  transition: background-color 0.3s ease;
+}
+
+.navbar {
+  padding: 1rem 0;
+}
+
+.navbar-brand img {
+  max-height: 40px;
+}
+
+.nav-item .nav-link {
+  color: #555;
+  font-weight: 500;
+}
+
+.nav-item .nav-link:hover {
+  color: #007bff;
 }

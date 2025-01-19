@@ -2,3 +2,41 @@
   background-color: #4caf50; /* Verde de sucesso */
   color: white;
 }
+
+  body {
+    background-color: #f8f9fa;
+  }
+
+  .form-container {
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+  }
+
+  .form-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  .input-group-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+
+
+  }
+
+  .btn {
+    font-size: 1rem;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  .container {
+    margin-top: 70px; /* Adiciona espaçamento para compensar o navbar */
+  }

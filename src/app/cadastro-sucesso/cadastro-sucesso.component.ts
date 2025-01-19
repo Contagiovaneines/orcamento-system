@@ -14,7 +14,7 @@ export class CadastroSucessoComponent implements OnInit {
   ngOnInit(): void {
     // Exibe a mensagem de sucesso
     const snack = this.snackBar.open('Muito bem, recebemos seu cadastro! Nossa equipe de Análise de requisitos entrará em contato em breve.', 'Fechar', {
-      duration: 5000, // A mensagem ficará visível por 5 segundos
+      duration: 25000, // A mensagem ficará visível por 25 segundos
       panelClass: ['snack-success']
     });
 

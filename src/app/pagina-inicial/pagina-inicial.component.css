@@ -1,45 +1,55 @@
 /* Estilos gerais */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f4f7fa; /* Fundo mais suave */
 }
 
-/* Navbar */
-header.scrolled {
-  background-color: rgba(190, 183, 183, 0.8);
-  transition: background-color 0.3s ease;
+/* Tamanho uniforme para ícones */
+i.fas {
+  font-size: 2.5rem; /* Tamanho padrão para todos os ícones */
+  color: #007bff; /* Cor padrão */
+  transition: transform 0.3s ease-in-out; /* Transição suave para hover */
 }
 
-.navbar {
-  padding: 1rem 0;
+i.fas:hover {
+  transform: scale(1.1); /* Efeito de zoom no hover */
 }
 
-.navbar-brand img {
-  max-height: 40px;
+/* Vídeo de fundo da Hero Section */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
 }
 
-.nav-item .nav-link {
-  color: #555;
-  font-weight: 500;
-}
-
-.nav-item .nav-link:hover {
-  color: #007bff;
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Hero Section */
 .hero-section {
   position: relative;
-  background-color: #1e87f0; /* Azul mais vibrante */
-  height: 400px;
+  background-color: rgba(11, 43, 66, 0.6); /* Cor de fundo */
+  min-height: 450px; /* Altura mínima */
+  padding-top: 60px; /* Espaço superior */
+  padding-bottom: 40px; /* Espaço inferior */
   color: white;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-radius: 10px; /* Bordas suavizadas */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  transition: all 0.3s ease-in-out; /* Transição suave */
 }
 
 .hero-section .overlay {
@@ -48,62 +58,235 @@ header.scrolled {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3); /* Overlay mais suave */
-  border-radius: 10px; /* Overlay com bordas suavizadas */
+  background: rgba(0, 0, 0, 0.4); /* Overlay mais suave */
+  border-radius: 15px; /* Borda arredondada */
 }
 
-
 .hero-logo {
-  max-width: 200px;
+  width: 50%; /* Reduz o tamanho da logo */
+  margin-top: 30px;
+  max-width: 100%;
+  z-index: 1; /* Garante que a logo fique acima do vídeo */
+  transition: all 0.3s ease-in-out;
 }
 
 .group-logo {
-  max-width: 150px;
+  width: 20%;
+  max-width: 150px; /* Limita o tamanho máximo da logo do grupo */
+  background-color: #ffffff;
+  opacity: 0.8;
+  border-radius: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px; /* Espaço entre as logos */
 }
 
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero-logo {
+    width: 70%; /* Aumenta o tamanho da logo em dispositivos menores */
+  }
+
+  .group-logo {
+    width: 40%;
+  }
+
+  .hero-section {
+    min-height: 350px; /* Ajusta a altura mínima */
+  }
+}
+
+
 /* Features Section */
+.features-section {
+  padding: 60px 0;
+  background-color: #ffffff;
+}
+
 .features-section h3 {
   color: #333;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.features-section p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .features-section .feature-icon {
-  font-size: 2rem;
+  font-size: 2.5rem; /* Manter o tamanho consistente para ícones de recursos */
   color: #007bff;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.features-section .feature-icon:hover {
+  transform: scale(1.1); /* Efeito de zoom nos ícones */
+}
+
+.features-section h4 {
+  color: #444;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
 
 /* Steps Section */
 .steps-section {
   background-color: #333;
+  padding: 60px 0;
+  color: white;
 }
 
 .steps-section .step-card {
   background: #444;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 10px;
   color: #fff;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.steps-section .step-card:hover {
+  transform: translateY(-10px); /* Efeito de elevação ao passar o mouse */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
 }
 
 .steps-section .step-number {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: #007bff;
+}
+
+.steps-section h5 {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.steps-section p {
+  color: #aaa;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* Footer */
 footer {
   background: #222;
   color: white;
+  padding: 40px 0;
 }
 
 footer h5 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
 footer ul li a {
-  color: #aaa;
+  color: #bbb;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
 footer ul li a:hover {
   color: white;
+}
+
+footer ul {
+  padding-left: 0;
+}
+
+/* Buttons */
+.btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-5px);
+}
+
+/* Service Section */
+.services-section .row .col-md-4 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.services-section h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.services-section p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ISO Section */
+.iso-certification-section {
+  background-color: #f7f9fc;
+  padding: 60px 0;
+}
+
+.iso-certification-section h2 {
+  color: #333;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.iso-certification-section p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #ffffff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.contact-section .btn {
+  font-size: 1.2rem;
+  padding: 12px 30px;
+}
+
+/* Hover Effect for Card Elements */
+.card, .step-card, .feature-icon {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover, .step-card:hover, .feature-icon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }

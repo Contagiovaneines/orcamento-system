@@ -1,25 +1,25 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Kaspper</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-
-        <!-- Link para a lista de clientes -->
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/clientes" routerLinkActive="active">Lista de Clientes</a>
-        </li>
-      </ul>
+<header class="fixed-top bg-white" [ngClass]="{'scrolled': isScrolled}">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="assets\k_azul.png" alt="Kaspper Logo" height="40">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Sobre Nós</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Produtos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Cases</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Vagas</a></li>
+          <li class="nav-item">
+            <a routerLink="/clientes/novo" class="btn btn-primary">Orçamento</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>

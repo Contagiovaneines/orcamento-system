@@ -1,118 +1,172 @@
-<!-- App Component HTML -->
-<div class="container-fluid">
-  <header class="fixed-top bg-white" [ngClass]="{'scrolled': isScrolled}">
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="assets\k_azul.png" alt="Kaspper Logo" height="40">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Sobre Nós</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Serviços</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Produtos</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Cases</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Vagas</a></li>
-            <li class="nav-item">
-              <a routerLink="/clientes/novo" class="btn btn-primary">Orçamento</a>
-            </li>
+<section class="hero-section text-center text-white">
+  <!-- Vídeo de fundo -->
+  <div class="video-background">
+    <video id="backgroundVideo" autoplay muted loop>
+      <source src="assets/kaspper.mp4" type="video/mp4">
+      <source src="assets/kaspper.ogv" type="video/ogg">
+      Seu navegador não suporta o vídeo.
+    </video>
+    <button id="playButton" (click)="playVideo()">Play Video</button>
+  </div>
+  <div class="overlay"></div>
+  <div class="container position-relative">
+    <img src="assets/kaspper_br.png" alt="Kaspper Logo" class="hero-logo mb-4">
+    <h2 class="mb-4">Uma empresa do Grupo</h2>
+    <img src="assets/accesstage.png" alt="Accesstage Logo" class="group-logo">
+  </div>
+</section>
 
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero-section text-center text-white">
-    <div class="overlay"></div>
-    <div class="container">
-      <img src="assets\kaspper_br.png" alt="Kaspper Logo" class="hero-logo mb-4">
-      <h2 class="mb-4">Uma empresa do Grupo</h2>
-      <img src="assets\accesstage.png" alt="Accesstage Logo" class="group-logo">
-    </div>
-  </section>
 
- <!-- Features Section -->
+
+<!-- Features Section -->
 <section class="features-section py-5">
   <div class="container">
     <h3 class="text-center mb-5">Inovadora em TI com processamento de alta performance.</h3>
+    <p class="text-center">Com mais de 30 anos de experiência de mercado somados entre todo o time, nos tornamos um centro de tecnologia especialista no desenvolvimento de soluções inovadoras em TI com processamento de alta performance.</p>
     <div class="row">
       <div class="col-md-4 text-center">
         <div class="feature-icon mb-3">
-          <img src="assets\img-kaspper-3.jpg" alt="Analisamos seu Panorama" class="img-fluid">
+          <img src="assets/img-kaspper-3.jpg" alt="Analisamos seu Panorama" class="img-fluid">
         </div>
-        <h4>Conhecemos o seu negócio</h4>
-        <p>Uma das principais áreas em que atuamos com nossos clientes.</p>
+        <h4>Analisamos seu Panorama</h4>
+        <p>Mais importante que apenas ofertar soluções, a Kaspper entende o panorama atual do cliente para que nossos especialistas busquem os melhores caminhos para o sucesso do negócio.</p>
       </div>
       <div class="col-md-4 text-center">
         <div class="feature-icon mb-3">
-          <img src="assets\img-kaspper-1.jpg" alt="Criamos uma Estratégia" class="img-fluid">
+          <img src="assets/img-kaspper-1.jpg" alt="Criamos uma Estratégia" class="img-fluid">
         </div>
-        <h4>Construindo contexto – não apenas código</h4>
-        <p>Não somos uma fábrica de programas, construímos sistemas.</p>
+        <h4>Criamos uma Estratégia</h4>
+        <p>Criamos as melhores estratégias de negócio, sempre com o olhar no Cliente. Não abrimos mão da total transparência em nossos relacionamentos.</p>
       </div>
       <div class="col-md-4 text-center">
         <div class="feature-icon mb-3">
-          <img src="assets\img-kaspper-7.jpg" alt="Entregamos Valor Agregado" class="img-fluid">
+          <img src="assets/img-kaspper-7.jpg" alt="Entregamos Valor Agregado" class="img-fluid">
         </div>
-        <h4>Somos responsivos e flexíveis</h4>
-        <p>“Nada muda até que algo se mova”</p>
+        <h4>Entregamos Valor Agregado</h4>
+        <p>A Kaspper busca o sucesso de seus negócios atribuindo valor agregado em suas entregas. O sucesso de nossos Clientes é o nosso sucesso!</p>
       </div>
     </div>
   </div>
 </section>
 
-
-  <!-- Steps Section -->
-  <section class="steps-section bg-dark text-white py-5">
-    <div class="container">
-      <h2 class="mb-5">Isto é o que fazemos e fazemos perfeitamente</h2>
-      <div class="row">
-        <div class="col-md-3">
-          <div class="step-card">
-            <span class="step-number">01</span>
-            <h5>Conhecemos o seu negócio</h5>
-            <p>Uma das principais áreas em que atuamos com nossos clientes</p>
-          </div>
+<!-- Steps Section -->
+<section class="steps-section bg-dark text-white py-5">
+  <div class="container">
+    <h2 class="mb-5">Isto é o que fazemos e fazemos perfeitamente</h2>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="step-card">
+          <span class="step-number">01</span>
+          <h5>Conhecemos o seu negócio</h5>
+          <p>Uma das principais áreas em que atuamos com nossos clientes</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="step-card">
+          <span class="step-number">02</span>
+          <h5>Construindo contexto – não apenas código</h5>
+          <p>Não somos uma fábrica de programas, construímos sistemas.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="step-card">
+          <span class="step-number">03</span>
+          <h5>Somos responsivos e flexíveis</h5>
+          <p>“Nada muda até que algo se mova”</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="step-card">
+          <span class="step-number">04</span>
+          <h5>30 anos de experiência em TI</h5>
+          <p>Com 30 anos de experiência, nossa equipe é especializada em oferecer soluções de alta performance.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact Section -->
-  <section class="contact-section py-5">
-    <div class="container">
-      <h2>Fale com a Kaspper!</h2>
-      <p>Aguardamos seu contato, aguardamos seu resultado.</p>
-      <button class="btn btn-primary">Entre em Contato</button>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-white py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <h5>Serviços</h5>
-          <ul class="list-unstyled">
-            <li><a href="#">Alocação de Profissionais</a></li>
-            <li><a href="#">Automação de Processos</a></li>
-          </ul>
+<!-- Services Section -->
+<section class="services-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-4"><i class="fas fa-cogs"></i> Nossos Serviços de TI Gerenciados</h2>
+    <p class="text-center mb-5">Nosso compromisso é entregar soluções inovadoras com transparência e controle total das demandas.</p>
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <div class="feature-icon mb-3">
+          <i class="fas fa-users"></i>
         </div>
-        <div class="col-md-4">
-          <h5>Produtos</h5>
-          <ul class="list-unstyled"></ul>
+        <h4>Profissionais in loco ou remotos</h4>
+        <p>Oferecemos a flexibilidade de atuar com profissionais presenciais ou remotos, conforme a necessidade de sua empresa.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="feature-icon mb-3">
+          <i class="fas fa-clock"></i>
         </div>
-        <div class="col-md-4">
-          <h5>Kaspper</h5>
-          <ul class="list-unstyled"></ul>
+        <h4>SLA de atendimento controlado</h4>
+        <p>Garantimos agilidade no atendimento com monitoramento de horas e controle de chamados.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="feature-icon mb-3">
+          <i class="fas fa-bug"></i>
         </div>
+        <h4>Tratamento de erros e dúvidas</h4>
+        <p>Nosso time garante o tratamento rápido de erros e dúvidas, com suporte contínuo para sua empresa.</p>
       </div>
     </div>
-  </footer>
-</div>
+  </div>
+</section>
+
+<!-- ISO 9001 Certification Section -->
+<section class="iso-certification-section py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4"><i class="fas fa-certificate"></i> ISO 9001 - Qualidade Garantida</h2>
+    <p class="text-center">Em dezembro de 2022, a Kaspper conquistou a ISO 9001, permitindo melhorar nossos processos e garantir ações corretivas e preventivas com foco na satisfação dos nossos clientes.</p>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section py-5">
+  <div class="container">
+    <h2>Fale com a Kaspper!</h2>
+    <p>Aguardamos seu contato, aguardamos seu resultado.</p>
+    <button class="btn btn-primary">Entre em Contato</button>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Serviços</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Alocação de Profissionais</a></li>
+          <li><a href="#">Automação de Processos (RPA)</a></li>
+          <li><a href="#">Consultoria focada em processos de Qualidade</a></li>
+          <li><a href="#">Desenvolvimento de Sistemas</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Produtos</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Academia Kaspper</a></li>
+          <li><a href="#">Lecom - Automação de ponta a ponta</a></li>
+          <li><a href="#">Veragi - Plataforma de Antecipação de Recebíveis</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Kaspper</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">Política de Qualidade</a></li>
+          <li><a href="#">Canal de Denúncia</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
