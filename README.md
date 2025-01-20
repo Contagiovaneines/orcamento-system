@@ -113,7 +113,7 @@ Este sistema foi desenvolvido como parte do Trabalho de Conclusão de Curso da e
 ---
 
 ## 🛠️ Licença
-© [Kaspper], [2025]. Todos os direitos reservados.
+© Kaspper, 2025. Todos os direitos reservados.
 Este software é proprietário e seu uso está sujeito às condições expressas no contrato de licença.
 
 
